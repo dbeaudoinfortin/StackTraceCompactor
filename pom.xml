@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dbf.utils</groupId>
 	<artifactId>stack-trace-compactor</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>Stack Trace Compactor</name>
 
 	<dependencies>
