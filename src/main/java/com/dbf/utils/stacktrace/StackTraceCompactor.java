@@ -1,39 +1,41 @@
 package com.dbf.utils.stacktrace;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 public class StackTraceCompactor {
 	
 	/***
-	 * Makes stack traces more compact by collapsing previously seen package names
-	 * and removing redundant information.
+	 * Returns a compacted stack trace from a provided Throwable.
 	 * 
 	 * @param t - the Throwable
-	 * @return a compacted stack trace in a single String
+	 * @return a compacted stack trace as a String
 	 */
 	public static String getCompactStackTrace(Throwable t) {
-		final StringWriter sw = new StringWriter();
-		final PrintWriter pw = new PrintWriter(sw);
+		StringBuilder sb = new StringBuilder(200);
 		
-		pw.print("\nStackTrace:\n");
+		sb.append("\nStackTrace:\n");
 		
 		//Apache Commons produces a more compact stack trace that clearly indicates [wrapped] lines
 		String[] stackElements = ExceptionUtils.getRootCauseStackTrace(t);
-		collapsePackageNames(stackElements);
+		collapseStackElements(stackElements);
 		for (final String element : stackElements) {
-			pw.println(element);
+			sb.append(element);
+			sb.append(System.lineSeparator());
 		}
-
-		return sw.toString();		
+		return sb.toString();		
 	}
 	
-	private static void collapsePackageNames(String[] stackElements) {
+	/***
+	 * Makes an array of stack trace elements more compact by collapsing previously
+	 * seen package names and removing redundant information.
+	 * 
+	 * @param stackElements - an array of stack trace elements
+	 * @return void
+	 */
+	public static void collapseStackElements(String[] stackElements) {
 		String previousValidPackageName = "";
-		StringBuilder sb = new StringBuilder(200);
+		StringBuilder sb = new StringBuilder(200); //Reuse the string builder
 		
 		for(int i = 0; i < stackElements.length; i++) {
 			sb.setLength(0);
@@ -50,8 +52,8 @@ public class StackTraceCompactor {
 			int methodIndex = line.lastIndexOf('.', openBracketIndex);
 			if(methodIndex < 0) continue;
 			
-			int closeBracketIndex = line.lastIndexOf(')', openBracketIndex);
-			if(closeBracketIndex < 0) continue;
+			int closeBracketIndex = line.lastIndexOf(')');
+			if(closeBracketIndex < 0 || closeBracketIndex <= openBracketIndex) continue;
 			
 			//Extract the package name
 			String packageName = line.substring(atIndex + 3, methodIndex);
