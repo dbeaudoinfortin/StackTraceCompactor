@@ -3,6 +3,8 @@ World's most advanced stack trace generator! 😃 Make your Java stack traces le
 
 ![Example](https://github.com/dbeaudoinfortin/StackTraceCompactor/assets/15943629/d3870f4f-b56a-444c-85ac-3d8492e278aa)
 
+A 50% reduction.
+
 ## How to use
 
 Add the following to your pom.xml:
