@@ -13,7 +13,7 @@ Add the following to your pom.xml:
 <dependency>
   <groupId>io.github.dbeaudoinfortin</groupId>
   <artifactId>stack-trace-compactor</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.5</version>
 </dependency>
 ```
 

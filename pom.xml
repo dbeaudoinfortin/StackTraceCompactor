@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.dbeaudoinfortin</groupId>
 	<artifactId>stack-trace-compactor</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.5</version>
 	<packaging>jar</packaging>
 	<name>Stack Trace Compactor</name>
 	<description>Make your Java stack traces less verbose!</description>
