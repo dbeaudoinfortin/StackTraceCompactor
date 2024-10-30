@@ -11,9 +11,9 @@ Add the following to your pom.xml:
 
 ```
 <dependency>
-  <groupId>com.dbf.utils</groupId>
+  <groupId>io.github.dbeaudoinfortin</groupId>
   <artifactId>stack-trace-compactor</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 

@@ -28,7 +28,6 @@ public class StackTraceCompactor {
 	 * seen package names and removing redundant information.
 	 * 
 	 * @param stackElements - an array of stack trace elements
-	 * @return void
 	 */
 	public static void collapseStackElements(String[] stackElements) {
 		if (stackElements.length < 2) return;
