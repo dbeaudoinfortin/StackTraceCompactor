@@ -9,7 +9,7 @@ A 50% reduction.
 
 Add the following to your pom.xml:
 
-```
+```xml
 <dependency>
   <groupId>io.github.dbeaudoinfortin</groupId>
   <artifactId>stack-trace-compactor</artifactId>
@@ -19,7 +19,7 @@ Add the following to your pom.xml:
 
 And invoke the utility by calling `StackTraceCompactor.getCompactStackTrace(t)` :
 
-```
+```java
 try {
   //Some fun stuff
 } catch (Throwable t) {
