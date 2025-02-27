@@ -1,4 +1,5 @@
-# StackTraceCompactor
+# StackTraceCompactor <img src="https://github.com/user-attachments/assets/35374feb-9ff5-45c1-86e9-8c651ca30de1" height="25" />
+
 World's most advanced stack trace generator! 😃 Make your Java stack traces less verbose without sacrificing information!
 
 ![Example](https://github.com/dbeaudoinfortin/StackTraceCompactor/assets/15943629/d3870f4f-b56a-444c-85ac-3d8492e278aa)
