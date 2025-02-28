@@ -24,7 +24,7 @@ And invoke the utility by calling `StackTraceCompactor.getCompactStackTrace(t)` 
 try {
   //Some fun stuff
 } catch (Throwable t) {
-  log.error("Unexpected failure. " + StackTraceCompactor.getCompactStackTrace(t));
+  log.error("Unexpected failure.\n" + StackTraceCompactor.getCompactStackTrace(t));
 }
 ```
 
